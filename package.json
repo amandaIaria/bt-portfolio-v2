@@ -4,11 +4,43 @@
   "description": "A template for static webpack sites",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --colors",
+    "start": "cross-env NODE_ENV=development webpack --config webpack/dev.config.js --progress --colors --watch"
   },
   "keywords": [
     "template"
   ],
   "author": "Amanda",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^7.1.2",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "browser-sync": "^2.18.12",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "bs-fullscreen-message": "^1.1.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "foundation-sites": "^6.4.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "script-loader": "^0.7.0",
+    "strip-ansi": "^4.0.0",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.1.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "@material/ripple": "^3.0.0",
+    "material-components-web": "^3.0.0",
+    "postcss-loader": "^3.0.0"
+  }
 }
