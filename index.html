@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-
+    <header>${require('./src/components/header.html')}</header>
+    <main>${require('./src/components/main.html')}</main>
+    <footer>${require('./src/components/footer.html')}</footer>
 </body>
 </html>

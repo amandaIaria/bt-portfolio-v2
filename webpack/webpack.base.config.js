@@ -1,24 +1,40 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/app',
-  output: {
-    path: path.resolve(__dirname, '../dist'),
+  entry: path.join(__dirname, '../src/app.js'),
+
+	output: {
+		path: path.join(__dirname, '../../assets'),
     filename: 'app.[contenthash:8].js',
     publicPath: '/'
   },
+  
   module: {
     rules: [
       {
-        test: [/.js$|.ts$/],
-        exclude: /(node_modules)/,
+        test: /\.html$/,
+        use: [ {
+          loader: 'html-loader',
+          options: {
+            interpolate: true
+          }
+        }],
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
+      {
+        test: [/.js$/],
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/typescript', 
               '@babel/preset-env'
             ]
           }
@@ -57,17 +73,17 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, '../src/components'),
-      '@style': path.resolve(__dirname, '../src/style'),
-      '@fonts': path.resolve(__dirname, '../src/fonts'),
-      '@img': path.resolve(__dirname, '../src/img'),
-      '@js': path.resolve(__dirname, '../src/js'),
+      '@style': path.resolve(__dirname, '../src/assets/style'),
+      '@fonts': path.resolve(__dirname, '../src/assets/fonts'),
+      '@img': path.resolve(__dirname, '../src/assets/img'),
+      '@js': path.resolve(__dirname, '../src/assets/scripts'),
       '@': path.resolve(__dirname, '../src'),
     },
     modules: [
       'node_modules',
       path.resolve(__dirname, '../src')
     ],
-    extensions: ['.js', '.ts'],
+    extensions: ['.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({
