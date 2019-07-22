@@ -15,6 +15,12 @@ module.exports = merge(webpackBaseConfig, {
           failOnWarning: false,
         },
       },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
     ]
   },
   plugins: [

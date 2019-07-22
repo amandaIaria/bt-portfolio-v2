@@ -4,8 +4,8 @@
   "description": "A template for static webpack sites",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist/ && webpack --mode production --config ./webpack/webpack.production.config.js",
-    "build-check": "rm -rf ./dist/ && npm run check-types && webpack --mode production --config ./webpack/webpack.production.config.js",
+    "build": "rm -rf ./production/ && webpack --mode production --config ./webpack/webpack.production.config.js",
+    "build-check": "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./webpack/webpack.production.config.js",
     "dev": "webpack-dev-server --mode development --config ./webpack/webpack.dev.config.js",
     "check-types": "tsc",
     "lint-style": "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q"
@@ -52,5 +52,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "ejs-loader": "^0.3.3"
+  }
 }

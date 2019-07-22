@@ -1,6 +1,6 @@
 // Import our modules
 // import './vendor/_material.js';
-import './assets/scripts/main';
+import './scripts/main';
 
 // Import the apps styles
-import './assets/style/app.scss';
+import './style/app.scss';

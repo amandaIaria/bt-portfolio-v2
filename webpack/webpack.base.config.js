@@ -3,31 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, '../src/app.js'),
-
-	output: {
-		path: path.join(__dirname, '../../assets'),
-    filename: 'app.[contenthash:8].js',
-    publicPath: '/'
-  },
-  
+  entry: path.join(__dirname, '../src/assets/app.js'),
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: [ {
-          loader: 'html-loader',
-          options: {
-            interpolate: true
-          }
-        }],
-      },
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-      },
       {
         test: [/.js$/],
         exclude: /node_modules/,
@@ -67,6 +45,16 @@ module.exports = {
           'sass-loader',
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.(html)$/,
+        use: [
+          {
+          loader: 'html-loader',
+          options: {
+            interpolate: true
+          }
+        }],
       }
     ]
   },
@@ -87,16 +75,19 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'app.[contenthash:8].css',
+      filename: './assets/[name].bundle.[contenthash:8].css',
     }),
     new HtmlWebpackPlugin({
+      template: './src/template.html',
+      filename: './index.html',
       title: 'Setting up webpack 4',
-      template: 'index.html',
       inject: true,
       minify: {
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        interpolate: true,
       },
+      
     })
   ]
 }
