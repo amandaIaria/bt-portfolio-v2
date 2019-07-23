@@ -1,5 +1,6 @@
-const merge = require('webpack-merge')
-const webpackBaseConfig = require('./webpack.base.config.js')
+const merge = require('webpack-merge');
+const path = require('path');
+const webpackBaseConfig = require('./webpack.base.config.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = merge(webpackBaseConfig, {
@@ -10,7 +11,7 @@ module.exports = merge(webpackBaseConfig, {
         loader: 'htmllint-loader',
         exclude: /(node_modules)/,
         query: {
-          config: '.htmllintrc', // path to custom config file
+          config: path.join(__dirname, "../.configs/.htmllintrc"), // path to custom config file
           failOnError: false,
           failOnWarning: false,
         },
@@ -20,12 +21,15 @@ module.exports = merge(webpackBaseConfig, {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
+        options: {
+          configFile:  path.join(__dirname, "../.configs/.eslintrc.json") 
+        }
       },
     ]
   },
   plugins: [
     new StyleLintPlugin({
-      configFile: '.stylelintrc',
+      configFile: './.configs/.stylelintrc',
       context: 'src'
     })]
 });

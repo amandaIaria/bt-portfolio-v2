@@ -31,7 +31,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[hash:8].[ext]',
+              name: '[name].[ext]',
               outputPath: 'assets/'
             }
           }
@@ -43,7 +43,14 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader', 
           'sass-loader',
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: './.configs'  
+              }
+            },
+          }
         ]
       },
       {
@@ -79,7 +86,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/template.html',
-      filename: './index.html',
+      filename: 'index.html',
       title: 'Setting up webpack 4',
       inject: true,
       minify: {
