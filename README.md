@@ -8,7 +8,7 @@ __This repo includes__:
       +  Create production ready projects
       +  Minificaiton and catcation
   -  SCSS
-  -  wepack-dev-server
+  -  webpack-dev-server
       +  allows you to have a dev server running, and will reload on changes to the HTML, SCSS, and JS
   -  Babel
   -  Mocha and Chia
