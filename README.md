@@ -38,6 +38,7 @@ __Future__
   -  Allow REACT to work with this
   -  See what happens with Angular
   -  Hope that I can move .babelrc to the .config folder
+  -  Be able to create a npm module with this.
 
 
 __Problems__
