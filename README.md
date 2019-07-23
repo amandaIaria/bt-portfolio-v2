@@ -5,14 +5,14 @@ I created this, for work and personal projects. This isn't for any actual framew
 
 __This repo includes__: 
   -  webpack 
-    +  Create production ready projects
-    +  Minificaiton and catcation
+      +  Create production ready projects
+      +  Minificaiton and catcation
   -  SCSS
   -  wepack-dev-server
-    +  allows you to have a dev server running, and will reload on changes to the HTML, SCSS, and JS
+      +  allows you to have a dev server running, and will reload on changes to the HTML, SCSS, and JS
   -  Babel
   -  Mocha and Chia
-    +  Unit testing
+      +  Unit testing
   -  Linting
       +  stylelint
       +  eslint
