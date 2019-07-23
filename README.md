@@ -14,22 +14,22 @@ __This repo includes__:
   -  Mocha and Chia
     +  Unit testing
   -  Linting
-    +  stylelint
-    +  eslint
-    +  HTML linting
+      +  stylelint
+      +  eslint
+      +  HTML linting
   -  Loaders
-    +  HTML allows to have module HTML
-    +  SVG
-    +  File
-    +  Babel (nautrally)
-    +  Postcss/scss/css
+      +  HTML allows to have module HTML
+      +  SVG
+      +  File
+      +  Babel (nautrally)
+      +  Postcss/scss/css
   -  aliases
-    +  '@components': HTML components
-    +  '@style': Style directory
-    +  '@fonts': Fonts directory
-    +  '@img': Images directory
-    +  '@js': Scripts/Js directory
-    +  '@':  Overall src directory
+      +  '@components': HTML components
+      +  '@style': Style directory
+      +  '@fonts': Fonts directory
+      +  '@img': Images directory
+      +  '@js': Scripts/Js directory
+      +  '@':  Overall src directory
 
 
 __Future__
