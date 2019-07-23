@@ -13,7 +13,13 @@ module.exports = {
   node: {
     fs: 'empty'
   },
-
+  resolve: {
+    alias: {
+      '@js': path.resolve(__dirname, '../src/assets/scripts'),
+      '@': path.resolve(__dirname, '../src'),
+    },
+    extensions: ['.js'],
+  },
   plugins: [
     new WebpackShellPlugin({
       onBuildExit: "mocha ./tests/compiled/test-bundle.js"

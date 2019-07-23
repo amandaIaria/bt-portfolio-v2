@@ -11,7 +11,8 @@
     "lint-style": "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
     "testandlint": "npm run lint-style && npm run test-build",
     "test-watch": "webpack --mode development -w --progress --colors --config ./webpack/webpack.test.config.js",
-    "test-build": "rm -rf ./tests/compiled/ && webpack  --mode production --progress --colors --config ./webpack/webpack.test.config.js"
+    "test-build": "rm -rf ./tests/compiled/ && webpack  --mode production --progress --colors --config ./webpack/webpack.test.config.js",
+    "delete-tests": "rm -rf ./tests/compiled/"
   },
   "keywords": [
     "template"
