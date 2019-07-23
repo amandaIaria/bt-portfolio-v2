@@ -37,6 +37,7 @@ __Future__
   -  SCSS Unit testing
   -  Allow REACT to work with this
   -  See what happens with Angular
+  -  Hope that I can move .babelrc to the .config folder
 
 
 __Problems__
