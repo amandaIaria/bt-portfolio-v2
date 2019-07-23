@@ -6,7 +6,7 @@ const webpackBaseConfig = require('./webpack.base.config.js');
 
 module.exports = merge(webpackBaseConfig, {
   output: {
-		path: path.join(__dirname, '../production'),
+		path: path.join(__dirname, '../../production'),
     filename: './assets/[name].bundle.[contenthash:8].js',
     // publicPath: '/'
   },

@@ -1,6 +1,6 @@
 # Deployment directories
 node_modules
-dist
+production
 # Optional npm cache directory
 .npm
 # Mac
