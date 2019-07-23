@@ -11,7 +11,7 @@ module.exports = merge(webpackBaseConfig, {
         loader: 'htmllint-loader',
         exclude: /(node_modules)/,
         query: {
-          config: path.join(__dirname, "../.configs/.htmllintrc"), // path to custom config file
+          config: path.join(__dirname, "../.htmllintrc"), // path to custom config file
           failOnError: false,
           failOnWarning: false,
         },
@@ -22,7 +22,7 @@ module.exports = merge(webpackBaseConfig, {
         exclude: /node_modules/,
         loader: "eslint-loader",
         options: {
-          configFile:  path.join(__dirname, "../.configs/.eslintrc.json") 
+          configFile:  path.join(__dirname, "../.eslintrc.json") 
         }
       },
     ]
