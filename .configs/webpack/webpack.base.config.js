@@ -26,13 +26,19 @@ module.exports = {
         }
       },
       {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/'
+              outputPath: 'assets/img/'
             }
           }
         ]
@@ -82,7 +88,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './assets/[name].bundle.[contenthash:8].css',
+      filename: './assets/style/[name].bundle.[contenthash:8].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/template.html',
