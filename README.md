@@ -48,11 +48,11 @@ __Problems__
 ## Helpful scripts
 npm run ...
 
-  -  "build":              "rm -rf ./production/ && webpack --mode production --config ./webpack/webpack.production.config.js",
-  -  "build-check":        "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./webpack/webpack.production.config.js",
-  -  "dev":                "webpack-dev-server --mode development --config ./webpack/webpack.dev.config.js",
-  -  "test-watch":         "webpack --mode development -w --progress --colors --config ./webpack/webpack.test.config.js",
-  -  "test-build":         "npm run delete-tests && webpack  --mode production --progress --colors --config ./webpack/webpack.test.config.js",
+  -  "build":              "rm -rf ./production/ && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+  -  "build-check":        "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+  -  "dev":                "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
+  -  "test-watch":         "webpack --mode development -w --progress --colors --config ./.configs/webpack/webpack.test.config.js",
+  -  "test-build":         "npm run delete-tests && webpack  --mode production --progress --colors --config ./.configs/webpack/webpack.test.config.js",
   -  "lint-style":         "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
   -  "test-and-lint":      "npm run lint-style && npm run test-build",
   -  "delete-tests":       "rm -rf ./tests/compiled/",

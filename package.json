@@ -4,14 +4,14 @@
   "description": "A template for static webpack sites",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./production/ && webpack --mode production --config ./webpack/webpack.production.config.js",
-    "build-check": "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./webpack/webpack.production.config.js",
-    "dev": "webpack-dev-server --mode development --config ./webpack/webpack.dev.config.js",
+    "build": "rm -rf ./production/ && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+    "build-check": "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+    "dev": "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
     "check-types": "tsc",
     "lint-style": "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
     "testandlint": "npm run lint-style && npm run test-build",
-    "test-watch": "webpack --mode development -w --progress --colors --config ./webpack/webpack.test.config.js",
-    "test-build": "rm -rf ./tests/compiled/ && webpack  --mode production --progress --colors --config ./webpack/webpack.test.config.js",
+    "test-watch": "webpack --mode development -w --progress --colors --config ./.configs/webpack/webpack.test.config.js",
+    "test-build": "rm -rf ./tests/compiled/ && webpack  --mode production --progress --colors --config ./.configs/webpack/webpack.test.config.js",
     "delete-tests": "rm -rf ./tests/compiled/"
   },
   "keywords": [
