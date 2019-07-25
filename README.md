@@ -33,28 +33,52 @@ __This repo includes__:
 
 
 __Future__
-  -  Typescript is sort of set up, but more work and testing will have to be done.
+  -  Typescript is sort of set up, but more work and testing will have to be done
   -  SCSS Unit testing
   -  Allow REACT to work with this
   -  See what happens with Angular
   -  Hope that I can move .babelrc to the .config folder
-  -  Be able to create a npm module with this.
+  -  Be able to create a npm module with this
+  -  Add routing that doesn't involve a framework (this is more of a learning exercise on how routing in JS works, so it won't be as amazing as angular or react-router)
+  -  See how jenkins can be integrated with ... It might just be adding a Jenkins file and making sure whatever server has Jenkins on it 🤷
 
 
 __Problems__
-  -  HtmlWebpackPlugin.options does not work with the HTML loader. I've tried suggestions from what I could find and they didn't work.
+  -  HtmlWebpackPlugin.options does not work with the HTML loader. I've tried suggestions from what I could find but they didn't work.
 
 
 
 ## Helpful scripts
 npm run ...
 
-  -  "build":              "rm -rf ./production/ && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
-  -  "build-check":        "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
-  -  "dev":                "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
-  -  "test-watch":         "webpack --mode development -w --progress --colors --config ./.configs/webpack/webpack.test.config.js",
-  -  "test-build":         "npm run delete-tests && webpack  --mode production --progress --colors --config ./.configs/webpack/webpack.test.config.js",
-  -  "lint-style":         "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
-  -  "test-and-lint":      "npm run lint-style && npm run test-build",
-  -  "delete-tests":       "rm -rf ./tests/compiled/",
-  -  "check-types":        "tsc",
+  -  build
+        +  Regular production build
+        +   "rm -rf ./production/ && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+  -  build-check
+        +  Bulds and checks the typescript
+        +  "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+  -  dev
+        +  Your watch while you make
+        +  "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
+  -  test-watch  
+        +  Watch while you make your tests
+        +  possible needs some work
+        +  "webpack --mode development -w --progress --colors --config ./.configs/webpack/webpack.test.config.js",
+  -  test-build   
+        +  builds your tests and prefoms
+        +  "npm run delete-tests && webpack  --mode production --progress --colors --config ./.configs/webpack/webpack.test.config.js",
+  -  lint-style
+        +  Check your styles
+        +  should be in the watch command too.
+        +  "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
+  -  test-and-lint
+        +  Builds tests and lints your styles
+        +  "npm run lint-style && npm run test-build",
+  -  test-type-and-lint
+        + . Need to make command
+  -  delete-tests
+        +  Deletes tests
+        + "rm -rf ./tests/compiled/",
+  -  check-types        
+        +  check typescripts
+        +  "tsc",
