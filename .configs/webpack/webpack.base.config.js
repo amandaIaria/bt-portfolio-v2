@@ -53,6 +53,7 @@ module.exports = {
             },
           },
           { loader: 'extract-loader' },
+          MiniCssExtractPlugin.loader,
           { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
@@ -63,7 +64,10 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['./node_modules']
+              includePaths: ['./node_modules'],
+              config: {
+                path: './.configs'  
+              }
             }
           }
         ]
