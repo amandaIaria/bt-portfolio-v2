@@ -43,6 +43,7 @@ __Future__
 
 __Problems__
   -  HtmlWebpackPlugin.options does not work with the HTML loader. I've tried suggestions from what I could find and they didn't work.
+  -  LInting rules need some work
 
 
 

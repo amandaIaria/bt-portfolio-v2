@@ -44,18 +44,27 @@ module.exports = {
         ]
       },
       {
-        test: [/.css$|.scss$/],
+        test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader', 
-          'sass-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'bundle.css',
+            },
+          },
+          { loader: 'extract-loader' },
+          { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
-              config: {
-                path: './.configs'  
-              }
-            },
+               plugins: () => [autoprefixer()]
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./node_modules']
+            }
           }
         ]
       },
