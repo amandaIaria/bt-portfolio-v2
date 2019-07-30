@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: path.join(__dirname, '../../src/assets/app.js'),
@@ -46,13 +47,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'bundle.css',
-            },
-          },
-          { loader: 'extract-loader' },
+          { loader: 'style-loader' },
           MiniCssExtractPlugin.loader,
           { loader: 'css-loader' },
           {
