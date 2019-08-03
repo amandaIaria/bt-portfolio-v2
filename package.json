@@ -4,7 +4,8 @@
   "description": "A template for static webpack sites",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./production/ && npm run prod-webpack && npm run server-webpack",
+    "build": "npm run test-build && rm -rf ./production/ && npm run prod-webpack && npm run server-webpack",
+    "build-notests": "rm -rf ./production/ && npm run prod-webpack && npm run server-webpack",
     "build-check": "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
     "dev": "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
     "check-types": "tsc",
