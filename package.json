@@ -4,7 +4,7 @@
   "description": "A template for static webpack sites",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./production/ && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+    "build": "rm -rf ./production/ && npm run prod-webpack && npm run server-webpack",
     "build-check": "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
     "dev": "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
     "check-types": "tsc",
@@ -12,7 +12,11 @@
     "testandlint": "npm run lint-style && npm run test-build",
     "test-watch": "webpack --mode development -w --progress --colors --config ./.configs/webpack/webpack.test.config.js",
     "test-build": "rm -rf ./tests/compiled/ && webpack  --mode production --progress --colors --config ./.configs/webpack/webpack.test.config.js",
-    "delete-tests": "rm -rf ./tests/compiled/"
+    "delete-tests": "rm -rf ./tests/compiled/",
+    "start": "node ./production/assets/scripts/server.bundle.js",
+    "prod-webpack": " webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
+    "server-webpack": " webpack --mode production --config ./.configs/webpack/webpack.server.config.js",
+    "local-build-server": "npm run build && npm run start"
   },
   "keywords": [
     "template"
@@ -79,7 +83,9 @@
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2",
-    "webpack-shell-plugin": "^0.5.0"
+    "webpack-shell-plugin": "^0.5.0",
+    "ejs-loader": "^0.3.3",
+    "es6-promise": "^4.2.8"
   },
   "browserslist": [
     "> 1%",
@@ -88,7 +94,6 @@
   ],
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "ejs-loader": "^0.3.3",
-    "es6-promise": "^4.2.8"
+    "express": "^4.17.1"
   }
 }

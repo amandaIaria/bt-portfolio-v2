@@ -3,13 +3,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: [
-      '@babel/polyfill',
+     // '@babel/polyfill',
       path.join(__dirname, '../../src/assets/app.js'),
-      path.join(__dirname, '../../src/assets/style/app.scss')
+      path.join(__dirname, '../../src/assets/style/app.scss'),
     ],
+    target: 'node',
+    node: {
+      // Need this when working with express, otherwise the build fails
+      __dirname: false,   // if you don't put this is, __dirname
+      __filename: false,  // and __filename return blank or /
+    },
+    externals: [nodeExternals()], // Need this to avoid error when working with Express
     module: {
       rules: [
         {
@@ -126,6 +134,7 @@ module.exports = {
         filename: 'index.html',
         title: 'Setting up webpack 4',
         inject: true,
+        excludeChunks: [ 'server' ],
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -133,5 +142,4 @@ module.exports = {
         }
       })
     ]
-
 };
