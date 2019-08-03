@@ -1,3 +1,7 @@
+# Portfolio
+This uses the WP Boilerplate with Express
+
+
 # Webpack-boilerplate
 ## A boilerplate for Babel, SCSS, Webpack
 
