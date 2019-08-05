@@ -1,0 +1,124 @@
+// BUTTON
+
+.btn {
+  cursor: pointer;
+  @include transition(.2s);
+
+  &.menu__button {
+    right: 0;
+    top: 0;
+    margin: auto;
+    background: map-get($colors, darkGrey);
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    z-index: 9999;
+    position: absolute;
+  }
+
+  &__border {
+    &--top,
+    &--middle,
+    &--bottom {
+      border-bottom: thin solid map-get($colors, brightBlue);
+      transform-origin: left center;
+      width: 100%;
+      display: block;
+      height: 1px;
+      @include transform(0deg);
+      @include transition(0.2s);
+    } 
+    
+    &--middle,
+    &--bottom {
+      margin-top: 14px;
+    }
+
+    &--top {
+      margin-top: 0;
+    }
+  }
+
+  &__container {
+    height: 30px;
+  }
+
+  &:active, 
+  &:focus {
+    top: 4px;
+  }
+}
+
+.close {
+  opacity: 1;
+
+  &.btn {
+    &__border {
+      &--top {
+        @include transform(45deg);
+        width: 136%;
+      }
+      
+      &--middle {
+        width: 0;
+      }
+      
+      &--bottom {
+        @include transform(-45deg);
+        width: 136%;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+
+// Menu
+.menu__container {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: map-get($colors, brightBlue);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-direction: column;
+    font-size: 24px;
+    height: calc(100vh - 48px);
+  }
+  
+  a:not(.menu__button) {
+    color: map-get($colors, darkGrey);
+    
+    &:hover {
+      color: map-get($colors, darkGrey);
+      border-color: map-get($colors, darkGrey);
+    }
+  }
+}
+
+.menu {
+  z-index: 90;
+  
+  &.hide {
+    display: none;
+  }
+  
+  &.show {
+    display: block;
+  }
+}

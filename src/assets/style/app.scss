@@ -1,7 +1,2 @@
-$grey: #333;
-$white: #ccc;
-
-body {
-  background: $grey;
-  color: $white;
-}
+@import '_bits/all';
+@import '_sections/all'
