@@ -1,7 +1,5 @@
-import * as menuOpen from '@js/components/menu-open';
-
-var expect = require('chai').expect;
-var jsdom = require('mocha-jsdom')
+var chai = require('chai');
+var expect = chai.expect;
 var assert = require('assert');
 var 
   $menu,
@@ -9,31 +7,50 @@ var
   $elementContainer,
   $elementButton;
 
-jsdom();
+chai.use(require('chai-dom'));
 
-beforeEach (function(){
-  $elementButton = document.createElement('a.menu__button');
-  $elementContainer = document.createElement('div.menu');
-  $menu = document.querySelector('.menu');
-  $menuButton = document.querySelector('.menu__button');
+before (function(){
+  $elementButton = d.createElement('a');
+  $elementContainer = d.createElement('div');
+  $elementButton.classList.add('menu__button', 'open');
+  $elementContainer.classList.add('menu', 'hide');
+  d.body.appendChild($elementButton);
+  d.body.appendChild($elementContainer);
+  $menu = d.querySelector('.menu');
+  $menuButton = d.querySelector('.menu__button');
+
+  $menuButton.addEventListener('click', function(e){
+    e.preventDefault();
+    var $this = e.target;
+    $this.classList.toggle('close');
+
+    if ($this.classList.contains('close')) {
+      $menu.classList.add('show');
+      $menu.classList.remove('hide');
+    } else {
+      $menu.classList.add('hide');
+      $menu.classList.remove('show');
+    }
+  });
 });
 
-afterEach (function(){
+after (function(){
+  d.body.removeChild($elementButton);
+  d.body.removeChild($elementContainer);
+});
+
+describe('menu open and closing on click', function() {
   
-});
 
-describe('menu open', function() {
   it('should add the open class to the menu and to the button', function() {
     $menuButton.click();
     expect($menuButton).to.have.class('close');
     expect($menu).to.have.class('show');
   });
-});
 
-describe('menu close', function() {
   it('should add the close class to the menu and to the button', function() {
     $menuButton.click();
-    expect($menuButton).to.have.class('close');
+    expect($menuButton).to.have.class('open');
     expect($menu).to.have.class('hide');
   });
 });

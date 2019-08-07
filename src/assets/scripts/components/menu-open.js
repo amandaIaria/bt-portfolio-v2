@@ -1,10 +1,11 @@
-const
-  $menuButton = document.querySelector('.menu__button'),
-  $menu = document.querySelector('.menu');
+const $menuButton = document.querySelector('.menu__button');
 
-$menuButton.addEventListener('click', (e) => {
+export default function openMenu(e) {
   e.preventDefault();
-  const $this = e.target;
+  const
+    $this = e.target,
+    $menu = document.querySelector('.menu');
+
   $this.classList.toggle('close');
 
   if ($this.classList.contains('close')) {
@@ -14,4 +15,6 @@ $menuButton.addEventListener('click', (e) => {
     $menu.classList.add('hide');
     $menu.classList.remove('show');
   }
-});
+}
+
+$menuButton.addEventListener('click', openMenu);
