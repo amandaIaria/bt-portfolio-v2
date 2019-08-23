@@ -4,21 +4,6 @@
   cursor: pointer;
   @include transition(.2s);
 
-  &.menu__button {
-    right: 0;
-    top: 0;
-    margin: auto;
-    background: map-get($colors, darkGrey);
-    width: 50px;
-    height: 50px;
-    padding: 8px;
-    border-right: none;
-    border-top: none;
-    border-radius: 0;
-    z-index: 9999;
-    position: absolute;
-  }
-
   &__border {
     &--top,
     &--middle,
@@ -43,7 +28,7 @@
   }
 
   &__container {
-    height: 30px;
+    overflow: hidden;
   }
 
   &:active, 
@@ -55,11 +40,11 @@
 .close {
   opacity: 1;
 
-  &.btn {
+  .btn {
     &__border {
       &--top {
-        @include transform(45deg);
-        width: 136%;
+        @include transform(40deg);
+        width: 132%;
       }
       
       &--middle {
@@ -68,7 +53,7 @@
       
       &--bottom {
         @include transform(-45deg);
-        width: 136%;
+        width: 138%;
       }
     }
   }
@@ -80,37 +65,6 @@
 
 
 // Menu
-.menu__container {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  background: map-get($colors, brightBlue);
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-
-  ul {
-    margin: 0;
-    padding-left: 0;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-direction: column;
-    font-size: 24px;
-    height: calc(100vh - 48px);
-  }
-  
-  a:not(.menu__button) {
-    color: map-get($colors, darkGrey);
-    
-    &:hover {
-      color: map-get($colors, darkGrey);
-      border-color: map-get($colors, darkGrey);
-    }
-  }
-}
-
 .menu {
   z-index: 90;
   
@@ -120,5 +74,71 @@
   
   &.show {
     display: block;
+  }
+
+  &__container {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: map-get($colors, brightBlue);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  
+    ul {
+      margin: 0;
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-direction: column;
+      font-size: 24px;
+      height: calc(100vh - 48px);
+    }
+    
+    a:not(.menu__button) {
+      color: map-get($colors, darkGrey);
+      
+      &:hover {
+        color: map-get($colors, darkGrey);
+        border-color: map-get($colors, darkGrey);
+      }
+    }
+  }
+
+  &__button {
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: auto;
+    background: map-get($colors, darkGrey);
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    z-index: 9999;
+  }
+}
+
+// general section styles
+
+.portfolio {
+  &__section {
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    position: relative;
+  }
+
+  &--blue {
+    background: blue;
+  }
+
+  &--white {
+    background: #fff;
   }
 }

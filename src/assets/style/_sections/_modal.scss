@@ -1,0 +1,137 @@
+
+// Modal styles BEM
+
+.modal {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+
+  &.on {
+    display: grid;
+  }
+ 
+  &__close {
+    position: relative;
+    
+    .modal__close-button {
+       background: map-get($colors, b);
+       color: map-get($colors, w);
+       border-radius: 0 10px;
+       cursor: pointer;
+       padding: 0px 5px 2px 6px;
+       transition: 1s ease;
+       position: absolute;
+       top: 0px;
+       right: -1px;
+       
+       &:hover {
+         background: map-get($colors, w);
+         color: map-get($colors, b);
+       }
+    }
+ }
+ 
+  &__backdrop {
+    height: 100vh;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background: rgba(0,0,0,0.5);
+  }
+ 
+  &__btn {
+     border: thin solid map-get($colors, b);
+     box-shadow: 0px 5px 1px map-get($colors, db);
+     text-transform: capitalize;
+     font-size: 14px;
+     background: map-get($colors, b);
+     color: map-get($colors, dg);
+     transition: none;
+     display: inline-block;
+     font-weight: 400;
+     text-align: center;
+     vertical-align: middle;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     padding: .375rem .75rem;
+     line-height: 1.5;
+     border-radius: .25rem;
+
+    &:hover {
+      text-decoration: none;
+      color: map-get($colors, dg);
+      background: #0BB0DE;
+      border-color: #0BB0DE;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:active {
+      outline: 0;
+      box-shadow: 0px 5px 1px transparent;
+      transform: translateY(5px);
+    }
+  }
+ 
+  &__container {
+    background:  map-get($colors, dg);
+    border-radius: 10px;
+    height: auto;
+    margin: auto;
+    width: 300px;
+    overflow: hidden;
+    position: fixed;
+    box-shadow: 1px 1px 5px map-get($colors, bl);
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -200px;
+  }
+ 
+  &__content {
+    padding: 16px;
+    border-radius: 25px 0 0 0;
+    background:  map-get($colors, dg);
+    margin-top: -36px;
+    z-index: 2;
+    padding-bottom: 0;
+    height: auto;
+    position: relative;
+
+    h1 {
+      color:  map-get($colors, dw);
+      padding: 0;
+      margin-bottom: 4px;
+      margin-top: -37px;
+      text-align: right;
+      text-transform: capitalize;
+      text-shadow: -1px -1px 1px  map-get($colors, dg);
+    }
+
+    div {
+      color:  map-get($colors, dw);
+      font-size: 14px;
+      height: auto;
+      margin-top: 16px;
+    }
+  }
+ 
+  &__footer {
+     padding: 16px;
+     text-align: right;
+   }
+ 
+  &__header {
+    overflow: hidden;
+    height: 124px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+}

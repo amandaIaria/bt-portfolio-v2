@@ -1,2 +1,2 @@
 // non reusable
-import './components/menu-open';
+import './components/all-events';

@@ -17,6 +17,10 @@
     "rules": {
       "no-unused-vars": 1,
       "one-var": ["error", "always"],
-      "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+      "func-names": ["warn", "as-needed"],
+      "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+      "brace-style": ["error", "stroustrup"],
+      "no-restricted-globals": ["warn", "event", "fdescribe"],
+      "arrow-body-style": ["warn", "always"]
     }
 }
