@@ -34,10 +34,10 @@ window.addEventListener('keydown', (e) => {
   scroll.keyPressPanel($sections, e);
 });
 
-document.querySelector('button').addEventListener('click', (e) => {
-  const $thisButton = e.target;
-  scroll.keyPressPanel($sections, $thisButton.className);
-});
+// document.querySelector('button').addEventListener('click', (e) => {
+//   const $thisButton = e.target;
+//   scroll.keyPressPanel($sections, $thisButton.className);
+// });
 
 document.querySelector('.modal__backdrop').addEventListener('click', () => {
   modal.close();
@@ -54,7 +54,7 @@ document.querySelector('#projects').addEventListener('click', (e) => {
   }
 });
 
-document.querySelector('form').addEventListener('submit', (e) => {
+document.querySelector('.contact-form').addEventListener('submit', (e) => {
   e.preventDefault();
   contact.sendMessage(e);
 });

@@ -19,8 +19,12 @@ export function Projects() {
 
   this.getProjectsCollection = (i = '') => {
     const jsonValue = fetch(`${url}JSON/projects?id=${i}`)
-      .then(response => response.json())
-      .catch(e => console.error(e));
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
     return jsonValue;
   };
 

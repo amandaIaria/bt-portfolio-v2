@@ -21,7 +21,6 @@
       "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
       "brace-style": ["error", "stroustrup"],
       "no-restricted-globals": ["warn", "event", "fdescribe"],
-      "arrow-body-style": ["warn", "always"],
-      "quote-props": ["warn", "as-needed"]
+      "arrow-body-style": ["warn", "always"]
     }
 }

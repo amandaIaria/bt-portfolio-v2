@@ -24,14 +24,28 @@ export function Contact() {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify(message),
       })
-      .then(resp => resp.json())
-      .then(response => console.log('promise ', response))
-      .catch(err => console.log('err', err));
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((resp) => {
+        this.confirmationMessage(resp);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   this.gatherMessage = (e) => {
-    return e.target[0].value;
+    return {
+      from: e.target[0].value,
+      title: e.target[1].value,
+      message: e.target[2].value,
+    };
+  };
+
+  this.confirmationMessage = (resp) => {
+    console.log('r', resp);
   };
 }
