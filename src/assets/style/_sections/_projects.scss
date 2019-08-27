@@ -32,13 +32,13 @@
   -webkit-backface-visibility: hidden;
  
   &:hover {
-   transform: scale(1.25);
-   z-index: 9999;
+    transform: scale(1.25);
+    z-index: 9999;
 
-   .project__content {
-     background: transparent;
-   }
- }
+    .project__content {
+      background: transparent;
+    }
+  }
  
   &__content {
     height: 100%;

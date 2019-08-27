@@ -2,16 +2,18 @@
  * These are the user event handlers
  */
 
+import { Contact } from './contact';
 import { Menu } from './menu';
-import { WindowScroll } from './window-scroll';
 import { Modal } from './modal';
 import { Projects } from './projects';
+import { WindowScroll } from './window-scroll';
 
 const
-  scroll = new WindowScroll(),
+  contact = new Contact(),
+  menu = new Menu(),
   modal = new Modal(),
   project = new Projects(),
-  menu = new Menu(),
+  scroll = new WindowScroll(),
   $sections = document.querySelectorAll('.portfolio__section'),
   $menuLinks = document.querySelectorAll('.menu__link');
 
@@ -50,6 +52,11 @@ document.querySelector('#projects').addEventListener('click', (e) => {
   if (e.srcElement.offsetParent.className === 'project') {
     modal.open(e.srcElement.offsetParent);
   }
+});
+
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  contact.sendMessage(e);
 });
 
 $menuLinks.forEach(($menuLink) => {

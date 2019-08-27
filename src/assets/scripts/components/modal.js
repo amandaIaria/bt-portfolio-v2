@@ -27,26 +27,28 @@ export function Modal() {
       $projectId = e.getAttribute('id'),
       projectId = $projectId.split('_'),
       id = projectId[1],
-      projectObject = pro.projectsCollection(0);
+      projectObject = pro.getProjectsCollection(id);
 
-    this.placeData(projectObject[id]);
+    this.placeData(projectObject);
   };
 
   this.close = () => {
     $modalContainer.classList.remove('on');
   };
 
-  this.placeData = (p) => {
+  this.placeData = (json) => {
     const
       $modalTitle = $modalContainer.querySelector('.modal__content h1'),
       $modalCopy = $modalContainer.querySelector('.modal__content div'),
       $modalImage = $modalContainer.querySelector('.modal__header'),
       $modalLink = $modalContainer.querySelector('.modal__footer .modal__btn');
 
-    $modalTitle.textContent = p.title;
-    $modalCopy.textContent = p.content;
-    $modalImage.style.backgroundImage = `url(' ${p.image}')`;
-    $modalLink.setAttribute('href', p.url);
-    $modalContainer.classList.add('on');
+    json.then((p) => {
+      $modalTitle.textContent = p.title;
+      $modalCopy.textContent = p.content;
+      $modalImage.style.backgroundImage = `url(' ${p.image}')`;
+      $modalLink.setAttribute('href', p.url);
+      $modalContainer.classList.add('on');
+    });
   };
 }

@@ -15,22 +15,22 @@
     position: relative;
     
     .modal__close-button {
-       background: map-get($colors, b);
-       color: map-get($colors, w);
-       border-radius: 0 10px;
-       cursor: pointer;
-       padding: 0px 5px 2px 6px;
-       transition: 1s ease;
-       position: absolute;
-       top: 0px;
-       right: -1px;
+      background: map-get($colors, b);
+      color: map-get($colors, w);
+      border-radius: 0 10px;
+      cursor: pointer;
+      padding: 0px 5px 2px 6px;
+      transition: 1s ease;
+      position: absolute;
+      top: 0px;
+      right: -1px;
        
-       &:hover {
-         background: map-get($colors, w);
-         color: map-get($colors, b);
-       }
+      &:hover {
+      background: map-get($colors, w);
+      color: map-get($colors, b);
+      }
     }
- }
+  }
  
   &__backdrop {
     height: 100vh;
@@ -42,24 +42,20 @@
   }
  
   &__btn {
-     border: thin solid map-get($colors, b);
-     box-shadow: 0px 5px 1px map-get($colors, db);
-     text-transform: capitalize;
-     font-size: 14px;
-     background: map-get($colors, b);
-     color: map-get($colors, dg);
-     transition: none;
-     display: inline-block;
-     font-weight: 400;
-     text-align: center;
-     vertical-align: middle;
-     -webkit-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-     padding: .375rem .75rem;
-     line-height: 1.5;
-     border-radius: .25rem;
+    border: thin solid map-get($colors, b);
+    box-shadow: 0px 5px 1px map-get($colors, db);
+    text-transform: capitalize;
+    font-size: 14px;
+    background: map-get($colors, b);
+    color: map-get($colors, dg);
+    transition: none;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    border-radius: .25rem;
 
     &:hover {
       text-decoration: none;
