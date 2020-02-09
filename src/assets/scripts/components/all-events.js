@@ -3,6 +3,7 @@
  */
 
 import { Contact } from './contact';
+import { Copy } from './copy';
 import { Menu } from './menu';
 import { Modal } from './modal';
 import { Projects } from './projects';
@@ -10,6 +11,7 @@ import { WindowScroll } from './window-scroll';
 
 const
   contact = new Contact(),
+  copy = new Copy(),
   menu = new Menu(),
   modal = new Modal(),
   project = new Projects(),
@@ -18,7 +20,9 @@ const
   $menuLinks = document.querySelectorAll('.menu__link');
 
 window.onload = () => {
+  copy.getCopy();
   project.loadProjects();
+  copy.setCopy();
 };
 
 document.querySelector('.menu__button').addEventListener('click', () => {
