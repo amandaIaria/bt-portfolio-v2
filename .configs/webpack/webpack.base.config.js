@@ -7,7 +7,6 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: [
-     // '@babel/polyfill',
       path.join(__dirname, '../../src/assets/app.js'),
       path.join(__dirname, '../../src/assets/style/app.scss'),
     ],
