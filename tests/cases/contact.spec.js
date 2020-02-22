@@ -1,6 +1,6 @@
 import assert from 'assert';
 import chai from 'chai';
-import { Contact } from '@js/components/menu-open';
+// import { Contact } from '@js/components/menu-open';
 
 chai.use(require('chai-dom'));
 
