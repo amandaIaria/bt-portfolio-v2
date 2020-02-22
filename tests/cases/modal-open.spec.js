@@ -4,12 +4,9 @@ import { Project } from '@js/components/projects';
 var 
   expect = require('chai').expect,
   assert = require('assert'),
-  $elementModal,
-  ;
+  $elementModal;
 
 chai.use(require('chai-dom'));
-
-
 
 describe('Modal Testing', function() {
   before();
