@@ -17,23 +17,23 @@ export function Projects() {
     $projectContainer = document.querySelector('.projects'),
     url = process.env.URL;
 
-  this.getProjectsCollection = (i = '') => {
-    const jsonValue = fetch(`${url}JSON/projects?id=${i}`)
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    return jsonValue;
-  };
+  //this.getProjectsCollection = (i = '') => {
+  //  const jsonValue = fetch(`${url}JSON/projects?id=${i}`)
+  //    .then((response) => {
+  //      return response.json();
+  //    })
+  //    .catch((err) => {
+  //      console.error(err);
+  //    });
+  //  return jsonValue;
+  //};
 
-  this.loadProjects = () => {
-    const pC = this.getProjectsCollection();
-    pC.then((json) => {
-      json.forEach((project, index) => {
-        $projectContainer.innerHTML += `<div id="project_${index}" class="project"><div class="project__content"><h2>${project.title}</h2></div><div style="background-image:url(${project.image})" class="project__background"></div> </div>`;
-      });
-    });
-  };
+  //this.loadProjects = () => {
+  //  const pC = this.getProjectsCollection();
+  //  pC.then((json) => {
+  //    json.forEach((project, index) => {
+  //      $projectContainer.innerHTML += `<div id="project_${index}" class="project"><div class="project__content"><h2>${project.title}</h2></div><div style="background-image:url(${project.image})" class="project__background"></div> </div>`;
+  //    });
+  //  });
+  //};
 }
