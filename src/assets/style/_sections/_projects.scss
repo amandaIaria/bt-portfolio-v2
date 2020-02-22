@@ -1,0 +1,77 @@
+.projects {
+  z-index: 0;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+ 
+  &:hover {
+  .project:not(:hover) {
+   overflow: hidden;
+    
+   .project__content,
+   .project__background {
+    -webkit-filter: blur(5px) grayscale(100%); 
+    -moz-filter: blur(5px) grayscale(100%);
+    -o-filter: blur(5px) grayscale(100%);
+    -ms-filter: blur(5px) grayscale(100%); 
+    filter: url(#blur) grayscale(100%); 
+    filter: blur(5px) grayscale(100%);   
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3') grayscale(100%);
+   }
+  }
+ }
+}
+ 
+.project {
+  background-color: #333;
+  cursor: pointer;
+  position: relative;
+  -o-transition: 0.5s -o-filter linear, 0.5s ease;
+  -webkit-transition: 0.5s -webkit-filter linear, 0.5s ease;
+  -webkit-backface-visibility: hidden;
+ 
+  &:hover {
+    transform: scale(1.25);
+    z-index: 9999;
+
+    .project__content {
+      background: transparent;
+    }
+  }
+ 
+  &__content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+
+    h2 {
+      padding: 0 16px;
+      color: map-get($colors, dw);
+      text-shadow: 1px 1px 1px map-get($colors, dg);
+      text-align: right;
+    }
+  }
+ 
+  &__background {
+   height: 100%;
+   width: 100%;
+   background-position: center;
+   background-size: cover;
+   position: absolute;
+   background-color: transparent;
+   -webkit-transition: 0.5s -webkit-filter linear, 0.5s ease;
+   -o-transition: 0.5s -o-filter linear, 0.5s ease;
+   z-index: 1;
+   -webkit-backface-visibility: hidden;
+  }
+}
+
+.projects__container.portfolio__section {
+ overflow: hidden; 
+ display: flex;
+ height: 100vh;
+ z-index: 0
+}
