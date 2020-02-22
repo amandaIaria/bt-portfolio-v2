@@ -1,0 +1,29 @@
+$bodyFontSize: 14px;
+$bodyTitleSize: 24px;
+
+$colors: (
+  white: #fff,
+  darkGrey: #333,
+  brightBlue: #0cbfef,
+  black: #000,
+  w: #fff,
+  dg: #333,
+  b: #0cbfef,
+  db: #087C9C,
+  dw:  #f7f7f7,
+  lg: #ccc,
+  bl: #000,
+  fb: rgba(0,0,0,0.8)
+);
+
+$fontSizes: (
+  sectionTitles: $bodyTitleSize,
+  headerTitle: 48px,
+  socialTitle:  16px,
+  projectTitle: 16px,
+  projectDescTitle: 24px,
+  projectBody: $bodyFontSize,
+  aboutBody: $bodyFontSize,
+  aboutCallout: 18px,
+  inputsBody: $bodyFontSize
+);

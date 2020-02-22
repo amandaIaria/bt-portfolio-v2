@@ -1,5 +1,7 @@
 const merge = require('webpack-merge');
 const path = require('path');
+const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const webpackBaseConfig = require('./webpack.base.config.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
@@ -31,5 +33,7 @@ module.exports = merge(webpackBaseConfig, {
     new StyleLintPlugin({
       configFile: './.configs/.stylelintrc',
       context: 'src'
-    })]
+    }),
+    new Dotenv()
+  ]
 });

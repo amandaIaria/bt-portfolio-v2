@@ -1,0 +1,29 @@
+@mixin title($type){
+  @if($ype == 'main') {
+    // main is defined as the main title that appears on each slide
+    font-family: map-get($font, 'robotoSlab');
+    font-size:  map-get($fontSizes , 'sectionTitles' );
+  }
+  @else {
+    font-family: map-get($font, 'robotoSlab');
+    font-size:  map-get($fontSizes , 'sectionTitles' );
+  }
+}
+
+@mixin transition($time) {
+  -webkit-transition: $time ease-in-out;
+     -moz-transition: $time ease-in-out;
+       -o-transition: $time ease-in-out;
+          transition: $time ease-in-out;
+}
+
+@mixin transform($deg) {
+  -webkit-transform: rotate($deg);
+     -moz-transform: rotate($deg);
+       -o-transform: rotate($deg);
+          transform: rotate($deg);
+}
+
+@function margin-padding() {
+  $cat: 14px;
+}

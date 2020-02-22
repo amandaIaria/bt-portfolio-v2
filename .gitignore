@@ -3,5 +3,6 @@ node_modules
 production
 # Optional npm cache directory
 .npm
+.env
 # Mac
 .DS_Store
