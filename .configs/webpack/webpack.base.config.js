@@ -131,7 +131,7 @@ module.exports = {
         Promise: 'es6-promise',
       }),
       new HtmlWebpackPlugin({
-        template: './src/template.html',
+        template: './src/html/template.html',
         filename: 'index.html',
         title: 'Setting up webpack 4',
         inject: true,

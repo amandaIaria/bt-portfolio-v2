@@ -1,2 +1,3 @@
 // non reusable
-import './components/all-events';
+// import './components/all-events';
+import './react/react';
