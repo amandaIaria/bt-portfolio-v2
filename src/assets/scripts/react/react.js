@@ -1,34 +1,27 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+import Header from './sections/Header';
+import About from './sections/About';
+import CaseStudy from './sections/CaseStudy';
+import Projects from './sections/Projects';
+import Social from './sections/Social';
+import Contact from './sections/Contact';
+
 
 class Index extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState(() => {
-      return {
-        value
-      };
-    });
-  }
-
   render() {
     return (
-      <div>Hello React!</div>
+      <div>
+        <Header />
+        <About />
+        <CaseStudy />
+        <Projects />
+        <Social />
+        <Contact />
+      </div>
     );
   }
 }
 
-export default Form;
-
-const wrapper = document.getElementById('react-container');
-wrapper ? ReactDOM.render(<Index />, wrapper) : false;
+export default Index;
