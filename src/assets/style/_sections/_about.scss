@@ -1,0 +1,11 @@
+.bt-about {
+  &__image-container {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  &__image {
+    width: 120%;
+    object-fit: fill;
+  }
+}

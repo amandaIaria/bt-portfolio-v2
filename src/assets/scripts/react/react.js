@@ -8,17 +8,23 @@ import Projects from './sections/Projects';
 import Social from './sections/Social';
 import Contact from './sections/Contact';
 
+import Alerts from './components/Alerts/Alerts';
+
+/*
+  <Alerts />
+  <Header />
+  <About />
+  <CaseStudy />
+  <Projects />
+  <Contact />
+  <Social />
+*/
 
 class Index extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <About />
-        <CaseStudy />
+      <div className="bt-main">
         <Projects />
-        <Social />
-        <Contact />
       </div>
     );
   }

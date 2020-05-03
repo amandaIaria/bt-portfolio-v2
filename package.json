@@ -105,9 +105,13 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
+    "bt-patternlibrary": "git+https://github.com/amandaIaria/BT-Design-System.git",
     "core-js": "^3.6.4",
     "express": "^4.17.1",
+    "jshint": "^2.11.0",
     "node-gyp": "^6.1.0",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.3"
