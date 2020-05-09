@@ -24,7 +24,12 @@ class Index extends Component {
   render() {
     return (
       <div className="bt-main">
+        <Header />
+        <About />
+        <CaseStudy />
         <Projects />
+        <Contact />
+        <Social />
       </div>
     );
   }

@@ -11,7 +11,7 @@ class ProjectContainer extends Component {
   }
  
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('http://localhost:8080/projects')
       .then(response => response.json())
       .then(json =>  this.setState({ projects: json }));
   }
@@ -21,10 +21,13 @@ class ProjectContainer extends Component {
 
     return (
       <div className="bt-projects">
-        <h1>Projects</h1>
-        {projects.map(project =>
-          <Project key={project.id} projectObject={project} /> 
-        )}
+        <ul className="bt-projects__container">
+          {projects.map(project =>
+            <li key={project.id} className="bt-projects__item">
+              <Project projectObject={project} />
+            </li>
+          )}
+        </ul>
       </div>
     );
   }

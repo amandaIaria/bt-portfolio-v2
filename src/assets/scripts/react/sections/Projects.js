@@ -18,7 +18,7 @@ class Projects extends Component {
           </div>
         </div>
         <div className="ail-grid__row">
-          <div className="ail-grid__col">
+          <div className="ail-grid__col--12">
             <ProjectContainer />
           </div>
         </div>

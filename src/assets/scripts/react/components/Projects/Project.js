@@ -10,11 +10,11 @@ class Project extends Component {
 
   renderProject(object) {
     const styleBackground = {
-      backgroundImage: `url(${object.image})`
+      backgroundImage: `url(${object.imageBackground})`
     };
 
     return (
-      <a className="bt-project aiu-spacing--p32 aiu-spacing--m32 aiu-color-background--black"
+      <a className="bt-projects__link aiu-spacing--p32 aiu-color-background--black"
         style={styleBackground}
         onClick={this.openModal.bind(this, object)}
         href="#">

@@ -1,3 +1,35 @@
+.bt-projects {
+  // width: 300px;
+  overflow: hidden;
+
+  &__container {
+    list-style: none;
+    display: table;
+    padding: 0;
+    // width: 100vw;
+    overflow-x: scroll;
+  }
+
+  &__item {
+    display: table-cell;
+    margin: 16px;
+  }
+
+  &__link {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .projects {
   z-index: 0;
   display: grid;
