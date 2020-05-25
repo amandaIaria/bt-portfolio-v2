@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-
 class Header extends Component {
   render() {
     return (
-      <article className="aic-t-full-viewport aiu-display--grid aiu-align--center">
+      <article className="aic-t-full-viewport aiu-display--grid aiu-align--center btjs-portfolio__section" id="header">
         <div>
           <div className="ail-grid__row">
             <div className="ail-grid__col--6"></div>

@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm/ContactForm';
 class Contact extends Component {
   render() {
     return (
-      <article className="aic-t-full-viewport bt-contact">
+      <article className="aic-t-full-viewport bt-contact btjs-portfolio__section" id="contact">
         <div className="bt-container">
           <ContactForm />
         </div>

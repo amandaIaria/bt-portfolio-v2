@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  * @classdesc WindowScroll closure function, that contains all of the methods need for full screen
  * and full screen window movement.
@@ -20,7 +18,7 @@
  * After the arrow keys or link has been clicked, this method will move the page to the desired div
  */
 
-export function WindowScroll() {
+export default function WindowScroll() {
   const isElementInViewport = (el) => {
     const rect = el.getBoundingClientRect();
     return (
@@ -38,13 +36,16 @@ export function WindowScroll() {
       prevSibling,
       prevSiblingSelector;
 
+      console.info(e.deltaY) // eslint-disable-line
+
     panels.forEach((panel) => {
       if (isElementInViewport(panel)) {
+        console.info(panel.id, panel.nextSibling.id) // eslint-disable-line
         nextSibling = panel.nextSibling == null ? 'header' : panel.nextSibling.id;
         nextSiblingSelector = document.getElementById(nextSibling);
         prevSibling = panel.previousSibling == null ? 'social' : panel.previousSibling.id;
         prevSiblingSelector = document.getElementById(prevSibling);
-
+        
         // if going down look at the next sibiling
         if (e.deltaY >= 0) {
           nextSiblingSelector.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });

@@ -5,7 +5,7 @@ import Selfie from '../../../img/selfie/myphoto.png';
 class About extends Component {
   render() {
     return (
-      <article className="ail-grid aic-t-full-viewport">
+      <article className="ail-grid aic-t-full-viewport btjs-portfolio__section" id="about">
         <div className="ail-grid__row aiu-align--center">
           <div className="ail-grid__col ail-grid__col--6">
             <div className="ail-grid__row aiu-align--center">

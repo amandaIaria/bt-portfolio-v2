@@ -2,3 +2,22 @@
   width: 760px; 
   margin: auto;
 }
+
+// lists need to be added to the ds
+.aic-a-unordered {
+  padding: 0;
+
+  &__item {
+    display: block;
+  }
+
+  &--nostyle {
+    list-style: none;
+  }
+}
+
+.aiu-spacing {
+  &--m-auto { margin: auto; }
+}
+
+.aic-o-navigation__link { display: block;}

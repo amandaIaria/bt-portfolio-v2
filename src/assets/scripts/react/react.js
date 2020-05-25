@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import Header from './sections/Header';
 import About from './sections/About';
@@ -9,28 +8,22 @@ import Social from './sections/Social';
 import Contact from './sections/Contact';
 
 import Alerts from './components/Alerts/Alerts';
-
-/*
-  <Alerts />
-  <Header />
-  <About />
-  <CaseStudy />
-  <Projects />
-  <Contact />
-  <Social />
-*/
+import NavigationContainer from './components/Navigation/NavigationContainer';
+import ScrollContainer from './components/ScrollContainer/ScrollContainer';
 
 class Index extends Component {
+  
   render() {
     return (
-      <div className="bt-main">
+      <ScrollContainer>
+        <NavigationContainer />
         <Header />
         <About />
         <CaseStudy />
         <Projects />
         <Contact />
         <Social />
-      </div>
+      </ScrollContainer>
     );
   }
 }
