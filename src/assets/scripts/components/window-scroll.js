@@ -36,11 +36,12 @@ export default function WindowScroll() {
       prevSibling,
       prevSiblingSelector;
 
-      console.info(e.deltaY) // eslint-disable-line
+      console.info(e.deltaY); // eslint-disable-line
+      console.info(panels); // eslint-disable-line
 
     panels.forEach((panel) => {
       if (isElementInViewport(panel)) {
-        console.info(panel.id, panel.nextSibling.id) // eslint-disable-line
+        // console.info(panel.id, panel.nextSibling.id) // eslint-disable-line
         nextSibling = panel.nextSibling == null ? 'header' : panel.nextSibling.id;
         nextSiblingSelector = document.getElementById(nextSibling);
         prevSibling = panel.previousSibling == null ? 'social' : panel.previousSibling.id;

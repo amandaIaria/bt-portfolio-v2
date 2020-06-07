@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import PropTypes from 'prop-types';
 import Navigation from './Navigation';
 import NavigationButton from './NavigationButton';
 
@@ -13,11 +13,15 @@ class NavigationContainer extends Component {
       openNav: false
     }
     this.handelCLick = this.handelCLick.bind(this);
+    this.callBack = this.callBack.bind(this);
   }
 
   handelCLick() {
     this.setState({openNav: !this.state.openNav});
-    console.log(this.state.openNav); // eslint-disable-line
+  }
+
+  callBack(childData) {
+    this.setState({openNav: !childData});
   }
 
   render() {
@@ -25,11 +29,15 @@ class NavigationContainer extends Component {
 
     return (
       <>
-        <NavigationButton open={openNav} onClick={() => this.handelCLick()} />
-        <Navigation open={openNav} />
+        <NavigationButton open={ openNav } onClick={this.handelCLick} />
+        <Navigation open={ openNav } parentCallback={this.callBack} />
       </>
     );
   }
 }
+
+Navigation.propTypes = {
+  open: PropTypes.bool
+};
 
 export default NavigationContainer;
