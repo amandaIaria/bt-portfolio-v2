@@ -3,6 +3,16 @@
   z-index: 100;
 }
 
+.bt-ribbon {
+  background: map-get($colors, 'blue2');
+  color: map-get($colors, 'white');
+  position: fixed; 
+  padding: 8px 32px;
+  transform: rotate(-45deg);
+  margin-left: -41px;
+  margin-top: 11px;
+}
+
 
 
 

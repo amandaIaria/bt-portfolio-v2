@@ -1,5 +1,7 @@
 # Portfolio
-This uses the WP Boilerplate with Express
+This uses the WP Boilerplate with Express. 
+
+A work in progress portfolio.
 
 
 # Webpack-boilerplate
