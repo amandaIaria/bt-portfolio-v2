@@ -12,6 +12,8 @@ import Ribbon from './sections/Ribbon';
 import NavigationContainer from './components/Navigation/NavigationContainer';
 import ScrollContainer from './components/ScrollContainer/ScrollContainer';
 
+import WindowScroll from '../components/window-scroll';
+
 class Index extends Component {
   /*
     <CaseStudy />
@@ -19,15 +21,26 @@ class Index extends Component {
     <Contact />
     <Social />
   */
+
+  handleScroll(e) {
+    const
+    scroll = new WindowScroll(),
+    $sections = document.querySelectorAll('.btjs-portfolio__section');
+  
+  scroll.scrollPanel($sections, e);
+  }
   
   render() {
     return (
-      <ScrollContainer>
+      <>
         <Ribbon />
         <NavigationContainer />
-        <Header />
-        <About />
-      </ScrollContainer>
+        <ScrollContainer onWindowScroll={this.handleScroll}>
+          <Header />
+          <About />
+          <Projects />
+        </ScrollContainer>
+      </>
     );
   }
 }

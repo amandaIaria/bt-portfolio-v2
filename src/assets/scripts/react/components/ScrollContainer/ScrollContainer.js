@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import PropTypes from 'prop-types'; 
+import Header from '../../sections/Header';
+import About from '../../sections/About';
+import CaseStudy from '../../sections/CaseStudy';
+import Projects from '../../sections/Projects';
+import Social from '../../sections/Social';
+import Contact from '../../sections/Contact';
+
 import WindowScroll from '../../../components/window-scroll';
 
 class ScrollContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.myRef = React.createRef()
+    this.windowScroll = this.windowScroll.bind(this);
+    this.windowMoveOnPress = this.windowMoveOnPress.bind(this);
+  }
+
   windowScroll(e) {
-    const
-      scroll = new WindowScroll(),
-      $sections = document.querySelectorAll('.btjs-portfolio__section');
-    
-    // e.preventDefault();
-    scroll.scrollPanel($sections, e);
+    if (this.props.onWindowScroll) this.props.onWindowScroll(e);
   }
 
   windowMoveOnPress(e) {
@@ -22,12 +33,12 @@ class ScrollContainer extends Component {
   }
 
   componentDidMount() {
-    // window.addEventListener('wheel', this.windowScroll);
+    if (this.props.onWindowScroll) window.addEventListener('wheel', this.windowScroll);
     window.addEventListener('keydown', this.windowMoveOnPress);
   }
 
   componentWillUnmount() {
-    // window.removeEventListener('wheel', this.windowScroll);
+    if (this.props.onWindowScroll) window.removeEventListener('wheel', this.windowScroll);
     window.removeEventListener('keydown', this.windowMoveOnPress);
   }
 
@@ -40,7 +51,8 @@ class ScrollContainer extends Component {
 ScrollContainer.propTypes = {
   children: PropTypes.any,
   windowScroll: PropTypes.func,
-  windowMoveOnPress: PropTypes.func
+  windowMoveOnPress: PropTypes.func,
+  onWindowScroll: PropTypes.func
 };
 
 export default ScrollContainer;
