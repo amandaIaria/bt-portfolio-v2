@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import Header from './sections/Header';
 import About from './sections/About';
@@ -9,28 +8,39 @@ import Social from './sections/Social';
 import Contact from './sections/Contact';
 
 import Alerts from './components/Alerts/Alerts';
+import Ribbon from './sections/Ribbon';
+import NavigationContainer from './components/Navigation/NavigationContainer';
+import ScrollContainer from './components/ScrollContainer/ScrollContainer';
 
-/*
-  <Alerts />
-  <Header />
-  <About />
-  <CaseStudy />
-  <Projects />
-  <Contact />
-  <Social />
-*/
+import WindowScroll from '../components/window-scroll';
 
 class Index extends Component {
+  /*
+    <CaseStudy />
+    <Projects />
+    <Contact />
+    <Social />
+  */
+
+  handleScroll(e) {
+    const
+    scroll = new WindowScroll(),
+    $sections = document.querySelectorAll('.btjs-portfolio__section');
+  
+  scroll.scrollPanel($sections, e);
+  }
+  
   render() {
     return (
-      <div className="bt-main">
-        <Header />
-        <About />
-        <CaseStudy />
-        <Projects />
-        <Contact />
-        <Social />
-      </div>
+      <>
+        <Ribbon />
+        <NavigationContainer />
+        <ScrollContainer onWindowScroll={this.handleScroll}>
+          <Header />
+          <About />
+          <Projects />
+        </ScrollContainer>
+      </>
     );
   }
 }

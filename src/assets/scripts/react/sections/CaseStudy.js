@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 class CaseStudy extends Component {
   render() {
     return (
-      <article className="aic-t-full-viewport">
+      <article className="aic-t-full-viewport btjs-portfolio__section" id="casestudy">
         <div className="bt-container">
           <h2>Case Study</h2>
           <div className="aic-a-typography--body2">

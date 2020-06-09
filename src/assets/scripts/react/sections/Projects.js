@@ -5,7 +5,7 @@ import ProjectContainer from '../components/Projects/Projects';
 class Projects extends Component {
   render() {
     return (
-      <article className="aic-t-full-viewport">
+      <article className="aic-t-full-viewport btjs-portfolio__section" id="projects">
         <div className="bt-container">
           <div className="ail-grid__row">
             <div className="ail-grid__col ail-grid__col--6">
