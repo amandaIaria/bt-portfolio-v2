@@ -16,7 +16,7 @@ module.exports = {
       __dirname: false,   // if you don't put this is, __dirname
       __filename: false,  // and __filename return blank or /
     },
-    externals: [nodeExternals()], // Need this to avoid error when working with Express
+    // externals: [nodeExternals()], // Need this to avoid error when working with Express
     module: {
       rules: [
         {
@@ -59,7 +59,6 @@ module.exports = {
               loader: 'file-loader',
               options: {
                 name: '[name].[ext]',
-                outputPath: './assets/img/'
               }
             }
           ]
@@ -131,7 +130,7 @@ module.exports = {
         Promise: 'es6-promise',
       }),
       new HtmlWebpackPlugin({
-        template: './src/template.html',
+        template: './src/html/template.html',
         filename: 'index.html',
         title: 'Setting up webpack 4',
         inject: true,
