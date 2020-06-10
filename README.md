@@ -1,7 +1,9 @@
 # Portfolio
 This uses the WP Boilerplate with Express. 
 
-A work in progress portfolio.
+## A work in progress portfolio. 
+
+I thought I would take the time to update it, but I wanted a more Agile approach. So this will be updated in chuncks. The first chunk being the Header, About, and setup.
 
 
 # Webpack-boilerplate
