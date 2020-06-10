@@ -33,12 +33,12 @@ class ScrollContainer extends Component {
   }
 
   componentDidMount() {
-    if (this.props.onWindowScroll) window.addEventListener('wheel', this.windowScroll);
+    // if (this.props.onWindowScroll) window.addEventListener('wheel', this.windowScroll);
     window.addEventListener('keydown', this.windowMoveOnPress);
   }
 
   componentWillUnmount() {
-    if (this.props.onWindowScroll) window.removeEventListener('wheel', this.windowScroll);
+    // if (this.props.onWindowScroll) window.removeEventListener('wheel', this.windowScroll);
     window.removeEventListener('keydown', this.windowMoveOnPress);
   }
 

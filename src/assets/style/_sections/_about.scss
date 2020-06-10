@@ -7,5 +7,16 @@
   &__image {
     width: 120%;
     object-fit: fill;
+
+    @media (max-width: 1200px) {
+      margin-top: -45%;
+      margin-left: -20%;
+    }
+  }
+}
+
+p, .aic-a-typography--body1 {
+  @media (max-width: 720px) {
+    margin-bottom: -16px;
   }
 }

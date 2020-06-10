@@ -38,7 +38,6 @@ class Index extends Component {
         <ScrollContainer onWindowScroll={this.handleScroll}>
           <Header />
           <About />
-          <Projects />
         </ScrollContainer>
       </>
     );
