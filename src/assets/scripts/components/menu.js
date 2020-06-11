@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  * @classdesc Menu all method for the menu
  * @class
@@ -14,7 +12,7 @@
  * on click the window scrolls down to the approprate div and then closes the menu.
  */
 
-export function Menu() {
+export default function Menu() {
   const
     $menu = document.querySelector('.menu'),
     $menuButton = document.querySelector('.menu__button');
