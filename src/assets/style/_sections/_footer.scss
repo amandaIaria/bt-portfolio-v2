@@ -1,0 +1,19 @@
+.bt-footer {
+  &__social {
+    display: table;
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+
+    li {
+      display: table-cell;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+}

@@ -1,7 +1,23 @@
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.bt-container {
+  width: 760px; 
+  margin: auto;
 }
+
+// lists need to be added to the ds
+.aic-a-unordered {
+  padding: 0;
+
+  &__item {
+    display: block;
+  }
+
+  &--nostyle {
+    list-style: none;
+  }
+}
+
+.aiu-spacing {
+  &--m-auto { margin: auto; }
+}
+
+.aic-o-navigation__link { display: block;}

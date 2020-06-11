@@ -4,7 +4,7 @@
   "description": "Portfolio for Amanda Iaria",
   "main": "index.js",
   "scripts": {
-    "build": "npm run test-build && rm -rf ./production/ && npm run prod-webpack && npm run server-webpack && NODE_ENV=prod",
+    "build": "npm run test-build && rm -rf ./production/ && npm run prod-webpack && NODE_ENV=prod",
     "build-notests": "rm -rf ./production/ && npm run prod-webpack && npm run server-webpack",
     "build-check": "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
     "dev": "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js && NODE_ENV=dev",
@@ -47,6 +47,7 @@
     "@babel/plugin-transform-arrow-functions": "^7.8.3",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-modules": "^0.1.3",
+    "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
     "@babel/register": "^7.9.0",
     "autoprefixer": "^9.7.6",
@@ -67,6 +68,7 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.19.0",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.3.0",
     "html-elements-webpack-plugin": "^2.0.0",
@@ -77,6 +79,7 @@
     "jsdom": "^15.1.1",
     "jsdom-global": "^3.0.2",
     "mini-css-extract-plugin": "^0.8.2",
+    "minimist": "^1.2.5",
     "mocha": "^6.2.3",
     "mocha-jsdom": "^2.0.0",
     "node-sass": "^4.14.0",
@@ -102,8 +105,15 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
+    "bt-patternlibrary": "git+https://github.com/amandaIaria/BT-Design-System.git",
     "core-js": "^3.6.4",
-    "regenerator-runtime": "^0.13.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jshint": "^2.11.0",
+    "node-gyp": "^6.1.0",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "regenerator-runtime": "^0.13.3"
   }
 }
