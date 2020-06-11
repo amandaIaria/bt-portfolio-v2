@@ -20,9 +20,9 @@ class CaseStudy extends Component {
               <ul>
                 <li><a href="#" className="bt-casestudy__link">BEM, ITCSS, Atomic</a></li>
                 <li><a href="#" className="bt-casestudy__link">REACT</a></li>
-                <li><a href="#" className="bt-casestudy__link">Heroku</a></li>
+                <li><a href="#" className="bt-casestudy__link">Heroku and Netlify</a></li>
                 <li><a href="#" className="bt-casestudy__link">Design System</a></li>
-                <li><a href="#" className="bt-casestudy__link"></a></li>
+                <li><a href="#" className="bt-casestudy__link">Testing</a></li>
               </ul>
             </div>
             <div className="ail-grid__col ail-grid__col--6">
