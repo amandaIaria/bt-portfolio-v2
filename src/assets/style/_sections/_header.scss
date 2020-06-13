@@ -1,4 +1,6 @@
 .bt-header {
+  position: relative;
+  
   @media (max-width: 1200px) {
     &__title {
       text-align: center;
