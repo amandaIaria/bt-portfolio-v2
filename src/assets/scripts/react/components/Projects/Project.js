@@ -14,7 +14,6 @@ class Project extends Component {
   }
   
   openModal(object, e) {
-    // console.log('click'); // eslint-disable-line
     e.preventDefault();
     this.setState({ openModalState: !this.state.openModalState });
   }

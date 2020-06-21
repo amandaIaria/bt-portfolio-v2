@@ -1,16 +1,24 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; 
 import Project from './Project';
+import portfoodtruck from '../../../../img/portfolio/foodtruck.png';
+import port360Widget from '../../../../img/portfolio/360Widget.png';
+import portDarkLayout from '../../../../img/portfolio/DarkLayout.png';
+import porthealthyVT from '../../../../img/portfolio/healthyVT.png';
+import portparentup from '../../../../img/portfolio/parentup.png';
+import portsnap from '../../../../img/portfolio/snap.png';
+import portweatherPrep from '../../../../img/portfolio/weatherPrep.png';
 
 class ProjectContainer extends Component {
   constructor(props) {
     super(props);
  
     this.state = {
-      // Version one will not be using Heroku
+      
       projects: [
         {
           title: 'Good Food Truck',
-          image: 'https://placekitten.com/500/500',
+          image: portfoodtruck,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -18,7 +26,7 @@ class ProjectContainer extends Component {
         },
         {
           title: 'My Healthy VT',
-          image: 'https://placekitten.com/500/500',
+          image: porthealthyVT,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -26,7 +34,7 @@ class ProjectContainer extends Component {
         },
         {
           title: 'Parent Up',
-          image: 'https://placekitten.com/500/500',
+          image: portparentup,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -34,7 +42,7 @@ class ProjectContainer extends Component {
         },
         {
           title: 'Snap',
-          image: 'https://placekitten.com/500/500',
+          image: portsnap,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -82,7 +90,7 @@ class ProjectContainer extends Component {
         },
         {
           title: '360 Widget',
-          image: 'https://placekitten.com/500/500',
+          image: port360Widget,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -90,7 +98,7 @@ class ProjectContainer extends Component {
         },
         {
           title: 'Dark Layout',
-          image: 'https://placekitten.com/500/500',
+          image: portDarkLayout,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -98,7 +106,7 @@ class ProjectContainer extends Component {
         },
         {
           title: 'Weather Prep',
-          image: 'https://placekitten.com/500/500',
+          image: portweatherPrep,
           description: "I'm baby banjo letterpress marfa sustainable, knausgaard venmo keffiyeh XOXO mixtape live-edge. Meh VHS af vegan poke cardigan. Woke taxidermy subway tile PBR&B waistcoat. Selvage pickled poutine, williamsburg iPhone ethical chambray.",
           tags: [ 'Food Truck', 'charity'],
           company: 'HMC',
@@ -106,6 +114,7 @@ class ProjectContainer extends Component {
         }
       ],
     };
+
   }
  
   componentDidMount() {
@@ -115,11 +124,13 @@ class ProjectContainer extends Component {
   }
 
   render() {
-    const { projects } = this.state;
+    const
+      { projects } = this.state,
+      move = {left: this.props.directionForContatiner};
 
     return (
       <div className="bt-projects">
-        <ul className="bt-projects__container">
+        <ul className="bt-projects__container" style={move}>
           {projects.map((project, index) =>
             <li key={index} className="bt-projects__item">
               <Project projectObject={project} />
@@ -130,5 +141,10 @@ class ProjectContainer extends Component {
     );
   }
 }
+
+ProjectContainer.propTypes = {
+  disabledParent: PropTypes.any,
+  directionForContatiner: PropTypes.string
+};
 
 export default ProjectContainer;
