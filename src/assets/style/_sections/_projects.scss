@@ -1,48 +1,51 @@
+.aiu-position--relative {
+  position: relative;
+}
+
 .bt-projects {
+  $s: &;
   // width: 300px;
   overflow: hidden;
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+
+    @media (max-width: 1280px) {
+      font-size: 32px;
+      position: relative;
+      margin-bottom: -24px;
+    }
+  }
+
+  &__content {
+    // position: absolute;
+    // bottom: 0;
+  }
 
   &__container {
     list-style: none;
     display: table;
-    padding: 0;
-    // width: 100vw;
     overflow-x: scroll;
-  }
-
-  &__item {
-    display: table-cell;
-    margin: 16px;
-  }
-
-  &__link {
-    display: block;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-.projects {
-  z-index: 0;
-  display: grid;
-  width: 100vw;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
- 
-  &:hover {
-  .project:not(:hover) {
-   overflow: hidden;
+    padding: 0;
+    position: relative;
+    transition: 0.25s ease;
     
-   .project__content,
-   .project__background {
+    &:hover {
+      #{$s}__link:not(:hover) {
+        overflow: hidden;
+        -webkit-filter: blur(5px) grayscale(100%); 
+        -moz-filter: blur(5px) grayscale(100%);
+        -o-filter: blur(5px) grayscale(100%);
+        -ms-filter: blur(5px) grayscale(100%); 
+        filter: url(#blur) grayscale(100%); 
+        filter: blur(5px) grayscale(100%);   
+        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3') grayscale(100%);
+      }
+    }
+  }
+
+  &--modal-visible {
     -webkit-filter: blur(5px) grayscale(100%); 
     -moz-filter: blur(5px) grayscale(100%);
     -o-filter: blur(5px) grayscale(100%);
@@ -50,60 +53,128 @@
     filter: url(#blur) grayscale(100%); 
     filter: blur(5px) grayscale(100%);   
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3') grayscale(100%);
-   }
   }
- }
-}
- 
-.project {
-  background-color: #333;
-  cursor: pointer;
-  position: relative;
-  -o-transition: 0.5s -o-filter linear, 0.5s ease;
-  -webkit-transition: 0.5s -webkit-filter linear, 0.5s ease;
-  -webkit-backface-visibility: hidden;
- 
-  &:hover {
-    transform: scale(1.25);
-    z-index: 9999;
 
-    .project__content {
-      background: transparent;
+  &__item {
+    display: table-cell;
+  }
+
+  &__link {
+    border-radius: 5px;
+    display: block;
+    margin-right: 8px;
+    height: 532px;
+    width: 375px;
+    transition: 0.25s ease all;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    span {
+      opacity: 0;
+      transition: 0.25s linear opacity;
+    }
+
+    @media (max-width: 1280px) {
+      height: 266px;
+      width: 150px;
+    }
+
+    &:hover {
+      top: -32px;
+
+      span {
+        opacity: 1;
+      }
     }
   }
- 
-  &__content {
-    height: 100%;
-    width: 100%;
+}
+
+.aic-a-button--primary:disabled {
+  background: #333;
+}
+
+
+.aic-modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  align-items: center;
+  
+  &__bg {
+    background: rgba(0,0,0,0.7);
+    cursor: pointer;
+    height: 100vh;
+    width: 100vw;
     position: absolute;
-    background: rgba(0,0,0,0.5);
-    z-index: 2;
+    z-index: 1;
+  }
 
-    h2 {
-      padding: 0 16px;
-      color: map-get($colors, dw);
-      text-shadow: 1px 1px 1px map-get($colors, dg);
-      text-align: right;
+  &__card {
+    background: map-get($colors, 'white' );
+    height: 500px;
+    margin: auto;
+    width: 300px;
+    padding: 16px;
+    position: relative;
+  }
+
+  &__close {
+    text-align: right;
+    
+    a {
+      background: map-get($colors, 'flatblack' );
+      border-radius: 50%;
+      padding: 16px 24px;
+      cursor: pointer;
+      margin-right: -8px;
+      margin-top: -10px;
     }
   }
- 
-  &__background {
-   height: 100%;
-   width: 100%;
-   background-position: center;
-   background-size: cover;
-   position: absolute;
-   background-color: transparent;
-   -webkit-transition: 0.5s -webkit-filter linear, 0.5s ease;
-   -o-transition: 0.5s -o-filter linear, 0.5s ease;
-   z-index: 1;
-   -webkit-backface-visibility: hidden;
-  }
-}
 
-.projects__container.portfolio__section {
- overflow: hidden; 
- display: flex;
- height: 100vh;
- z-index: 0
+  &__container {
+    align-items: center;
+    display: grid;
+    margin: auto;
+    width: auto;
+    z-index: 9;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 16px;
+  }
+
+  &__header {
+    background-position: center;
+    height: 200px;
+    margin: -16px -16px 0 -16px;
+    overflow: hidden;
+  }
+
+  &__tag {
+    background: map-get($colors, 'flatblack' );
+    color: map-get($colors, 'white' );
+    font-size: 12px;
+    line-height: 12px;
+    margin: -4px;
+    padding: 4px;
+    text-transform: capitalize;
+    vertical-align: bottom;
+  }
+
+  &__title {
+    // color: map-get($colors, 'white' );
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 0px;
+    text-shadow: 0px 0px 6px map-get($colors, 'white' );
+    text-align: right;
+  }
+
 }
