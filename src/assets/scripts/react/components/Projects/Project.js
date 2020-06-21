@@ -30,7 +30,7 @@ class Project extends Component {
         <a className="bt-projects__link aiu-spacing--p32 aiu-color-background--black"
           style={styleBackground}
           onClick={(e) => this.openModal(projectObject, e)}
-          href="#">
+          href="#" rel="noopener noreferrer">
           <span>{projectObject.title}</span>
         </a>
 
