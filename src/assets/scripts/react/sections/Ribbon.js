@@ -5,7 +5,7 @@ class Ribbon extends Component {
   render() {
     return (
       <a className="bt-ribbon" href="https://github.com/amandaIaria/bt-portfolio-v2" target="_blank" rel="noopener noreferrer">
-        version 0.2
+        version 0.3
       </a>
     );
   }

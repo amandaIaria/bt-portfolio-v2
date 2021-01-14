@@ -24,7 +24,6 @@ class NavigationLink extends Component {
 
 
   handleClick(e) {
-    console.log('state', this.state.open, 'props', this.props.open); // eslint-disable-line
     e.preventDefault();
     const scroll = new WindowScroll();
     // scroll.scrollPanel(e.target.href, e);

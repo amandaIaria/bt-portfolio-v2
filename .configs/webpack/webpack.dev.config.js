@@ -33,7 +33,6 @@ module.exports = merge(webpackBaseConfig, {
     new StyleLintPlugin({
       configFile: './.configs/.stylelintrc',
       context: 'src'
-    }),
-    new Dotenv()
+    })
   ]
 });

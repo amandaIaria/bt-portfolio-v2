@@ -1,4 +1,9 @@
 .bt-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 308px;
+
   &__social {
     display: table;
     float: right;
@@ -15,5 +20,13 @@
 
   &__link {
     display: block;
+  }
+
+  &--light {
+    text-shadow: 2px 1px 1px rgb(0, 0, 0);
+  }
+
+  &--dark {
+    text-shadow: 2px 1px 1px rgb(225,225,225);
   }
 }
