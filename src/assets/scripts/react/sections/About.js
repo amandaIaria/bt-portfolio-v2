@@ -12,7 +12,7 @@ class About extends Component {
               <div className="ail-grid__col--6-xl ">
                 <h2 className="bt-header__title">About</h2>
               </div>
-              <div className="ail-grid__col--6-xl ">
+              <div className="ail-grid__col--6-xl aiu-spacing--p-h16-xl">
                 <header>
                   <span className="aic-a-typography--accent aiu">
                     Create Cutting-Edge Apps with a Focus on Componets, Accessibility, and UX

@@ -3,6 +3,8 @@ node_modules
 production
 # Optional npm cache directory
 .npm
+.env.local
 .env
+.env.staging
 # Mac
 .DS_Store
