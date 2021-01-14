@@ -27,7 +27,7 @@ class Footer extends Component {
       && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
       && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
-  };
+  }
 
   isElementPeekingInViewport(el) {
     const rect = el.getBoundingClientRect();
