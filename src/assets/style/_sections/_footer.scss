@@ -21,4 +21,12 @@
   &__link {
     display: block;
   }
+
+  &--light {
+    text-shadow: 2px 1px 1px rgb(0, 0, 0);
+  }
+
+  &--dark {
+    text-shadow: 2px 1px 1px rgb(225,225,225);
+  }
 }
