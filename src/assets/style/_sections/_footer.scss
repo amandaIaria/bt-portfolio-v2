@@ -1,4 +1,9 @@
 .bt-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 308px;
+
   &__social {
     display: table;
     float: right;

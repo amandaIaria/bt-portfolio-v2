@@ -103,7 +103,7 @@ class Projects extends Component {
           url: 'http://www.cannonsubaru.com/subaru-service-weather-vehicle-prep.htm',
           year: '2016',
         },
-        {
+       /* {
           title: 'Mapfre BreakPoint',
           image: 'https://placekitten.com/500/500',
           description: "hi I need copy!",
@@ -129,7 +129,7 @@ class Projects extends Component {
           company: 'Mapfre',
           url: 'http://example.com',
           year: '2020',
-        },
+        },*/
       ],
     };
     this.projects = React.createRef();
@@ -149,7 +149,6 @@ class Projects extends Component {
     const
       rect = $el.getBoundingClientRect(),
       container = $container.getBoundingClientRect();
-    console.log(rect.left, container.left); //eslint-disable-line
     return parseInt(rect.left, 10) >= parseInt(container.left, 10);
   }
 
@@ -157,7 +156,6 @@ class Projects extends Component {
     const
         rect = $el.getBoundingClientRect(),
         container = $container.getBoundingClientRect();
-    console.log(rect.right, container.right); //eslint-disable-line
     return parseInt(rect.right, 10) <= parseInt(container.right, 10);
   }
 

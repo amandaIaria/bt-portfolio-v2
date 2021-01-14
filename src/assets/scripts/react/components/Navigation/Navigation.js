@@ -61,7 +61,9 @@ class Navigation extends Component {
                 <li className="aic-a-unordered__item">
                   <a href="#projects" className="aic-o-navigation__link" onClick={this.goToScroll}> Projects </a>
                 </li>
-               
+                <li className="aic-a-unordered__item">
+                  <a href="#contact" className="aic-o-navigation__link"  onClick={this.goToScroll}> Contact </a>
+                </li>
               </ul>
             </div>
           </div>
