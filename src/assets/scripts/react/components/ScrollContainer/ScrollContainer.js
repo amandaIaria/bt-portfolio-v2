@@ -20,26 +20,29 @@ class ScrollContainer extends Component {
   }
 
   windowScroll(e) {
+    e.preventDefault();
     if (this.props.onWindowScroll) this.props.onWindowScroll(e);
   }
 
   windowMoveOnPress(e) {
     const
       scroll = new WindowScroll(),
-      $sections = document.querySelectorAll('.btjs-portfolio__section');
+      $articles = document.querySelectorAll('.btjs-portfolio__section');
 
-    e.preventDefault();
-    scroll.keyPressPanel($sections, e);
+    if (e.keyCode === 38 || e.keyCode === 40) {
+      e.preventDefault();
+      scroll.keyPressPanel($articles, e);
+    }
   }
 
   componentDidMount() {
     // if (this.props.onWindowScroll) window.addEventListener('wheel', this.windowScroll);
-    window.addEventListener('keydown', this.windowMoveOnPress);
+    // window.addEventListener('keydown', this.windowMoveOnPress);
   }
 
   componentWillUnmount() {
     // if (this.props.onWindowScroll) window.removeEventListener('wheel', this.windowScroll);
-    window.removeEventListener('keydown', this.windowMoveOnPress);
+    // window.removeEventListener('keydown', this.windowMoveOnPress);
   }
 
   render() {

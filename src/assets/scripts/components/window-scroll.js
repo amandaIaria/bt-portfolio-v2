@@ -87,8 +87,6 @@ export default function WindowScroll() {
           prevSibling =  panels[index - 1].id;
         }
 
-        console.log('next', nextSibling, 'prev', prevSibling, 'current', panel.id, 'currenttop'); // eslint-disable-line
-        
         nextSiblingSelector = document.getElementById(nextSibling);
         prevSiblingSelector = document.getElementById(prevSibling);
         

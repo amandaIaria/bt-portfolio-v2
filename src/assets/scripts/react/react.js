@@ -13,7 +13,7 @@ import Ribbon from './sections/Ribbon';
 import NavigationContainer from './components/Navigation/NavigationContainer';
 import ScrollContainer from './components/ScrollContainer/ScrollContainer';
 
-// import WindowScroll from '../components/window-scroll';
+import WindowScroll from '../components/window-scroll';
 
 class Index extends Component {
   /*
@@ -26,23 +26,25 @@ class Index extends Component {
         </ScrollContainer>
   */
 
-  // handleScroll(e) {
-  //   const
-  //     scroll = new WindowScroll(),
-  //     $sections = document.querySelectorAll('.btjs-portfolio__section');
-  // 
-  //   scroll.scrollPanel($sections, e);
-  // }
+  handleScroll(e) {
+    const
+      scroll = new WindowScroll(),
+      $sections = document.querySelectorAll('.btjs-portfolio__section');
+  
+    scroll.scrollPanel($sections, e);
+  }
   
   render() {
     return (
       <>
         <Ribbon />
         <NavigationContainer />
-        <Header />
-        <About />
-        <Projects />
-        <Contact />
+        <ScrollContainer onWindowScroll={this.handleScroll}>
+          <Header />
+          <About />
+          <Projects />
+          <Contact />
+        </ScrollContainer>
         <Footer />
       </>
     );
