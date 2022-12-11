@@ -108,7 +108,7 @@
   "dependencies": {
     "bt-patternlibrary": "git+https://github.com/amandaIaria/BT-Design-System.git",
     "core-js": "^3.8.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jshint": "^2.12.0",
     "node-gyp": "^6.1.0",
     "normalize.css": "^8.0.1",
